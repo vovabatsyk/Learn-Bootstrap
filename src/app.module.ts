@@ -7,11 +7,11 @@ import { UsersModule } from './users/users.module';
 	imports: [
 		SequelizeModule.forRoot({
 			dialect: 'postgres',
-			host: 'localhost',
-			port: 5432,
+			host: process.env.POSTGRES_HOST,
+			port: Number(process.env.POSTGRES_PORT),
 			username: 'postgres',
 			password: '4817',
-			database: 'nest-api',
+			database: process.env.POSTGRES_DB,
 			models: [],
 			autoLoadModels: true,
 		}),
